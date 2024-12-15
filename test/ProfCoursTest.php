@@ -90,9 +90,9 @@ class ProfCoursTest extends TestCase
             new Cours("Cours4", "2", 3),       // idcours = 4
             new Cours("Cours5", "3", 3),       // idcours = 5
             new Cours("Cours6", "2", 4),       // idcours = 6
-            new Cours("IoT", "10", 1),  
-            new Cours("IA", "12", 3),
-            new Cours("EDL", "5", 6),   
+            new Cours("IoT", "10", 1),  //7
+            new Cours("IA", "12", 3),//8
+            new Cours("EDL", "5", 6),   //9
  
 
 
@@ -339,7 +339,7 @@ class ProfCoursTest extends TestCase
         $this->assertTrue($val, "Update du prof num $idProf ...\n");
 
         // Cours
-        $cours = new Cours($this->nom, $this->prenom, $this->date, $this->lieu);
+        $cours = new Cours($this->intitule, $this->duree, 1);
         $val = $cours->updateOne($conn, $idCours);
         $expected_cours_str = $cours->__toString();
         $record_cours = Cours::printOne($conn, $idCours);
